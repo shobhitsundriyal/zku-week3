@@ -11,8 +11,8 @@ describe('ECDH test', () => {
   let eddsa: EdDSA;
   beforeAll(async () => {
     eddsa = await buildEddsaModule();
-  }, 15000);
-
+  }, 30000);
+  jest.setTimeout(10000)
   it('should encrypt/decrypt text', async () => {
     const { privKey: bobPrivKey, pubKey: bobPubKey } = genKeypair(eddsa);
     const { privKey: alicePrivKey, pubKey: alicePubKey } = genKeypair(eddsa);
